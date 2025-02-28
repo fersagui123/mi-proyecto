@@ -4,11 +4,12 @@ import java.util.Collections;
 
 public class BinarySearch {
     public static int buscar(List<Integer> lista, int objetivo) {
-        int inicio = 0;
-        int fin = lista.size() - 1;
+        int inicio = 0; // Índice de inicio del rango de búsqueda
+        int fin = lista.size() - 1; // Índice de fin del rango de búsqueda
+
 
         while (inicio <= fin) {
-            int medio = inicio + (fin - inicio) / 2;
+            int medio = inicio + (fin - inicio) / 2; // Calcula el punto medio
             
             // Si encontramos el elemento
             if (lista.get(medio) == objetivo) {
@@ -27,7 +28,7 @@ public class BinarySearch {
     }
 
     public static void opcionBinarySearch(Scanner scanner, List<Integer> lista) {
-        if (lista.isEmpty()) {
+        if (lista.isEmpty()) { // Verifica si la lista está vacía antes de proceder
             System.out.println("❌ No hay datos cargados. Cargue datos primero.");
             return;
         }
@@ -40,7 +41,7 @@ public class BinarySearch {
         int objetivo = scanner.nextInt(); // Se eliminó new java.util.Scanner(System.in).nextInt(); y se usó un Scanner existente porque generaba problemas con la entrada de datos.
         
 
-        int resultado = buscar(lista, objetivo);
+        int resultado = buscar(lista, objetivo); // Llamar al método de búsqueda binaria
 
         if (resultado == -1) {
             System.out.println("❌ El número no está en la lista.");

@@ -3,18 +3,18 @@ import java.util.ArrayList;
 
 public class MergeSort {
     public static void ordenar(List<Integer> lista) {
-        if (lista.size() < 2) {
+        if (lista.size() < 2) { // 
             return; // Caso base: lista con un solo elemento ya está ordenada
         }
 
-        int mitad = lista.size() / 2;
-        List<Integer> izquierda = new ArrayList<>(lista.subList(0, mitad));
+        int mitad = lista.size() / 2; // Calcula la mitad de la lista
+        List<Integer> izquierda = new ArrayList<>(lista.subList(0, mitad)); // Dividir la lista en dos sublistas (izquierda y derecha)
         List<Integer> derecha = new ArrayList<>(lista.subList(mitad, lista.size()));
 
-        ordenar(izquierda);
+        ordenar(izquierda); // Llamar recursivamente a ordenar para cada mitad
         ordenar(derecha);
         
-        merge(lista, izquierda, derecha);
+        merge(lista, izquierda, derecha); // Combinar ambas mitades ordenadas
     }
 
     private static void merge(List<Integer> lista, List<Integer> izquierda, List<Integer> derecha) {
@@ -41,12 +41,12 @@ public class MergeSort {
     }
 
     public static void opcionMergeSort(List<Integer> lista) {
-        if (lista.isEmpty()) {
+        if (lista.isEmpty()) { // Verifica si la lista está vacía antes de intentar ordenarla
             System.out.println("❌ No hay datos cargados. Cargue datos primero.");
             return;
         }
-        ordenar(lista);
-        System.out.println("✅ Lista ordenada con Merge Sort.");
+        ordenar(lista); // Llama al método de ordenamiento Merge Sort
+        System.out.println("✅ Lista ordenada con Merge Sort."); // Mensaje que confirla que la lista fue ordenada y la muestra
         System.out.println("📊 Lista ordenada: " + lista);
     }
 }

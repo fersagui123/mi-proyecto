@@ -1,11 +1,11 @@
-import java.util.List;
+import java.util.List; // Importa la clase List para manejar listas de enteros
 
 public class QuickSort {
     public static void ordenar(List<Integer> lista, int inicio, int fin) {
         if (inicio < fin) {
-            int indicePivote = particion(lista, inicio, fin);
-            ordenar(lista, inicio, indicePivote - 1);
-            ordenar(lista, indicePivote + 1, fin);
+            int indicePivote = particion(lista, inicio, fin); // Encuentra la posición del pivote después de la partición
+            ordenar(lista, inicio, indicePivote - 1); // Ordenar los elementos antes y después del pivote recursivamente
+            ordenar(lista, indicePivote + 1, fin); // Índice del menor elemento
         }
     }
 
@@ -32,12 +32,12 @@ public class QuickSort {
     }
 
     public static void opcionQuickSort(List<Integer> lista) {
-        if (lista.isEmpty()) {
+        if (lista.isEmpty()) { // Verifica si la lista está vacía antes de intentar ordenarla
             System.out.println("❌ No hay datos cargados. Cargue datos primero.");
             return;
         }
-        ordenar(lista, 0, lista.size() - 1);
-        System.out.println("✅ Lista ordenada con Quick Sort.");
+        ordenar(lista, 0, lista.size() - 1); // Llama al método de ordenamiento Quick Sort
+        System.out.println("✅ Lista ordenada con Quick Sort."); // Mensaje que confirla que la lista fue ordenada y la muestra
         System.out.println("📊 Lista ordenada: " + lista);
     }
 }

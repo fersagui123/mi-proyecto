@@ -67,6 +67,7 @@ public class ProyectoOrdenamiento {
         mostrarMenu(scanner, listaDatos);
     }
 
+        // Método para mostrar el menú principal
     public static void mostrarMenu(Scanner scanner, List<Integer> listaDatos) {
         int opcion;
         do {
@@ -89,31 +90,31 @@ public class ProyectoOrdenamiento {
             // Ejecutar la acción correspondiente
             switch (opcion) {
                 case 1:
-                    CargaDatosCSV.opcionCargarDatos(scanner, listaDatos);;
+                    CargaDatosCSV.opcionCargarDatos(scanner, listaDatos);; //Carga de datos de un archivo CSV
                     break;
                 case 2:
-                    BubbleSort.opcionBubbleSort(listaDatos);;
+                    BubbleSort.opcionBubbleSort(listaDatos);; // Ordenamiento usando el método Bubble sort
                     break;
                 case 3:
-                    EnhancedBubbleSort.opcionEnhancedBubbleSort(listaDatos);
+                    EnhancedBubbleSort.opcionEnhancedBubbleSort(listaDatos); // Ordenamiento usando el método Enhanced Bubble Sort
                     break;
                 case 4:
-                    QuickSort.opcionQuickSort(listaDatos);
+                    QuickSort.opcionQuickSort(listaDatos); // Ordenamiento usando el método Quick Sort
                     break;
                 case 5:
-                    SelectionSort.opcionSelectionSort(listaDatos);
+                    SelectionSort.opcionSelectionSort(listaDatos); // // Ordenamiento usando el método Selection Sort
                     break;
                 case 6:
-                    MergeSort.opcionMergeSort(listaDatos);
+                    MergeSort.opcionMergeSort(listaDatos); // Ordenamiento usando el método Merge Sort
                     break;
                 case 7:
-                    BinarySearch.opcionBinarySearch(scanner, listaDatos); // cambie esta linea ya que ahora requiere un scanner como parametro.
+                    BinarySearch.opcionBinarySearch(scanner, listaDatos); // Búsqueda binaria en la lista de datos. Cambie esta linea ya que ahora requiere un scanner como parametro.
                     break;
                 case 8:
                     CargarDatosCSV.opcionCargarDatos(scanner, listaDatos);
                     break;
                 default:
-                    System.out.println("⚠️ Opción no válida. Intente de nuevo.");
+                    System.out.println("⚠️ Opción no válida. Intente de nuevo."); // Mensaje de error para opciones inválidas
             }
         } while (opcion != 8);
     }
